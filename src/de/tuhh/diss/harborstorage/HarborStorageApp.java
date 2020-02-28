@@ -4,6 +4,14 @@ import de.tuhh.diss.harborstorage.sim.StorageException;
 
 public class HarborStorageApp {
 	
+	/**
+	 * This is the main method to test our program. The test is mainly to test the retrievePacket method 
+	 * by adding packets to the storage area and then retrieving one of them then adding another then
+	 * printing all the packets stored in the storage area
+	 * @param args
+	 * @throws StorageException
+	 */
+	
 	public static void main (String[] args) throws StorageException {
 		HarborStorageManagement a = new HarborStorageManagement();
 		a.storePacket(4, 1, 1, "Hermes", 1);
@@ -13,12 +21,16 @@ public class HarborStorageApp {
 		a.storePacket(4, 1, 1, "AliExpress", 1);
 		a.storePacket(3, 1, 1, "DPD", 1);
 		a.retrievePacket("AliExpress");
-		a.storePacket(4, 1, 1, "UML", 1);
-		
+		a.storePacket(4, 1, 1, "Ali", 1);
 		showAvailablePackets(a);
-		
-		
 	}
+	
+	/**
+	 * This method is implemented to print all packets stored in the storage area with their description,
+	 * id and location to the console
+	 * @param a
+	 * @return nothing
+	 */
 	
 	public static void showAvailablePackets(HarborStorageManagement a) {
 		System.out.println("The Packets Stored :");
